@@ -148,7 +148,15 @@
             var i=addZero(node.getMinutes());
             var s=addZero(node.getSeconds());
             var date=y+"年"+m+"月"+d+"日"
-            var time="当前时间:" + (m+"月"+d+"日"+h+":"+i+":"+s);
+            if (h<=12)
+            {
+                var time="当前时间: " + (m+"月"+d+"日 "+h+":"+i+":"+s+"AM");
+            }
+            else 
+            {
+                h = h-12;
+                var time="当前时间: " + (m+"月"+d+"日 "+h+":"+i+":"+s+"PM");
+            }
             var divVal=divobj.innerHTML=time;
             document.getElementById("date1").innerHTML = date;
             document.getElementById("date2").innerHTML = date;
